@@ -14,6 +14,17 @@ Cesar Ramiro Ruggieri - Usuario Github: subrami22 - Desarrollador
 Ivan Massimino - Usuario Github: IvanMass99 - Desarrollador
 Ivo Konstantinow - Usuario Github: konstantinowivo - Desarrollador
 
+# Link organizacion y repositorio segundo cuatrimestre
+
+# Organizacion: 
+
+https://github.com/Proyecto1-ISPC-G14-2025
+
+# Repositorio del proyecto : 
+
+https://github.com/Proyecto1-ISPC-G14-2025/Proyecto1-ISPC-G14-V1
+
+
 
 # Link a repositorio de trabajo remoto primer cuatrimestre
 https://github.com/Eleven1433/Proyecto-ISPC-G14.git
