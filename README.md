@@ -15,11 +15,11 @@ Ivan Massimino - Usuario Github: IvanMass99 - Desarrollador
 Ivo Konstantinow - Usuario Github: konstantinowivo - Desarrollador
 
 
-[!LINK] Link a repositorio de trabajo remoto primer cuatrimestre
+# Link a repositorio de trabajo remoto primer cuatrimestre
 https://github.com/Eleven1433/Proyecto-ISPC-G14.git
 
-[!LINK] Link a Wiki primer cuatrimestre
+# Link a Wiki primer cuatrimestre
 https://github.com/Eleven1433/Proyecto-ISPC-G14/wiki
 
-[!LINK] Link a proyecto Kanban primer cuatrimestre
+# Link a proyecto Kanban primer cuatrimestre
 https://github.com/users/Eleven1433/projects/1
