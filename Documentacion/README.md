@@ -25,12 +25,6 @@ https://github.com/Proyecto1-ISPC-G14-2025
 https://github.com/Proyecto1-ISPC-G14-2025/Proyecto1-ISPC-G14-V1
 
 
+# Link documento IIEE830 
 
-# Link a repositorio de trabajo remoto primer cuatrimestre
-https://github.com/Eleven1433/Proyecto-ISPC-G14.git
-
-# Link a Wiki primer cuatrimestre
-https://github.com/Eleven1433/Proyecto-ISPC-G14/wiki
-
-# Link a proyecto Kanban primer cuatrimestre
-https://github.com/users/Eleven1433/projects/1
+https://docs.google.com/document/d/110Sqob4effRd8KW3ZXe6a2ZKH_e42cwb/edit?usp=sharing&ouid=110629539472086017145&rtpof=true&sd=true
