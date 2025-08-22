@@ -1,4 +1,4 @@
-# Proyecto1-ISPC-G14-V1
+### Proyecto1-ISPC-G14-V1
 Repositorio Proyecto integrador 1 Segundo Cuatrimestre 2025
 
 # Título del Proyecto: Sistema de Gestión de Stock de medicamentos, FarmaStock.
