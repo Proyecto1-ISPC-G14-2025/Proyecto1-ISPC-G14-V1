@@ -27,7 +27,7 @@ Con este sistema buscamos:
 | 👨‍💻 Juan Ignacio Alonso | Desarrollador | [juanignacioalonso](https://github.com/juanignacioalonso) |
 | 👨‍💻 Cesar Ramiro Ruggieri | Desarrollador | [subrami22](https://github.com/subrami22) |
 | 👨‍💻 Ivan Massimino | Desarrollador | [IvanMass99](https://github.com/IvanMass99) |
-| 👨‍💻 Ivo Konstantinow | Desarrollador | [konstantinowivo](https://github.com/konstantinowivo) |
+
 
 ---
 
