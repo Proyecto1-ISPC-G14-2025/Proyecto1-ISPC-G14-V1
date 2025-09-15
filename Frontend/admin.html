@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inventario Farmacia FarmaStock</title>
+  <link rel="icon" href="favicon\medicamento.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+  .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  footer {
+    background-color: #0d6efd;
+    color: white;
+    padding: 20px 0;
+  }
+
+  footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Inventario Farmacia FarmaStock</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin-usu.html">Usuarios</a></li>
+           <li class="nav-item"><a class="nav-link" href="index.html">Cerrar Sesion</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Container principal -->
+  <div class="container mt-4">
+    <!-- Resumen Dashboard -->
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+          <div class="card-header">Medicamentos en Stock</div>
+          <div class="card-body">
+            <h5 class="card-title">150</h5>
+            <p class="card-text">Total de medicamentos disponibles</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-white bg-warning mb-3">
+          <div class="card-header">Medicamentos Próximos a Expirar</div>
+          <div class="card-body">
+            <h5 class="card-title">5</h5>
+            <p class="card-text">Artículos con fecha próxima de vencimiento</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabla de medicamentos -->
+    <h3>Medicamentos</h3>
+    <table class="table table-striped table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Lote</th>
+          <th>Cantidad</th>
+          <th>Fecha de Expiración</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Paracetamol</td>
+          <td>A1234</td>
+          <td>50</td>
+          <td>2025-12-31</td>
+          <td><button class="btn btn-sm btn-primary">Editar</button> <button class="btn btn-sm btn-danger">Eliminar</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Ibuprofeno</td>
+          <td>B5678</td>
+          <td>30</td>
+          <td>2024-10-20</td>
+          <td><button class="btn btn-sm btn-primary">Editar</button> <button class="btn btn-sm btn-danger">Eliminar</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Formulario de agregar medicamento -->
+    <h3>Agregar Nuevo Medicamento</h3>
+    <form>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Nombre del medicamento" required />
+      </div>
+      <div class="mb-3">
+        <label for="lote" class="form-label">Número de Lote</label>
+        <input type="text" class="form-control" id="lote" placeholder="Número de lote" required />
+      </div>
+      <div class="mb-3">
+        <label for="cantidad" class="form-label">Cantidad</label>
+        <input type="number" class="form-control" id="cantidad" min="1" placeholder="Cantidad en stock" required />
+      </div>
+      <div class="mb-3">
+        <label for="fechaExp" class="form-label">Fecha de Expiración</label>
+        <input type="date" class="form-control" id="fechaExp" required />
+      </div>
+      <button type="submit" class="btn btn-success">Agregar</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+</html>
