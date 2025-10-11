@@ -8,7 +8,7 @@
 * Cesar Ramiro Ruggieri - Usuario Github: subrami22 - Desarrollador
 * Ivan Massimino - Usuario Github: IvanMass99 - Desarrollador
 
-## 📝 Descripción de la Idea  
+### 📝 Descripción de la Idea  
 El proyecto **FarmaStock** consiste en desarrollar una **plataforma tecnológica** que permita **controlar y optimizar los procesos de gestión de medicamentos** dentro de una organización de salud.  
 
 Con este sistema buscamos:  
