@@ -253,6 +253,141 @@
       background-color: #0b5ed7;
       border-color: #0a58ca;
     }
+
+  /* Estilos para el modal de ampliación */
+.modal-ampliacion {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1100; /* AUMENTAR de 1000 a 1100 */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-ampliacion.active {
+  display: flex;
+}
+
+.modal-contenido {
+  background: white;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 1200px;
+  height: 90vh;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.modal-imagen {
+  flex: 1;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.modal-imagen img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.modal-info {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-info h3 {
+  color: #0d6efd;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.modal-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.cerrar-modal {
+  position: fixed; /* Cambiar de absolute a fixed */
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 10001; /* VALOR MÁS ALTO */
+}
+
+.cerrar-modal:hover {
+  background: #0d6efd;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .modal-contenido {
+    flex-direction: column;
+    height: 95vh;
+  }
+  
+  .modal-imagen {
+    flex: 0 0 40%;
+    padding: 20px;
+  }
+  
+  .modal-info {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .modal-info h3 {
+    font-size: 1.5rem;
+  }
+}
+
+.modal-ampliacion {
+  z-index: 1100;
+}
+
+.cerrar-modal {
+  z-index: 1101;
+}
+
+/* Estilos para la sección de compra */
+.compra-section {
+  border: 2px solid #e9ecef;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  margin-top: 2rem;
+}
+
+.btn-comprar {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.btn-comprar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
   </style>
 </head>
 <body>
@@ -396,78 +531,93 @@
         <!-- Botones de navegación -->
         <button class="carousel-nav prev" onclick="moveCarousel(-1)">❮</button>
         <button class="carousel-nav next" onclick="moveCarousel(1)">❯</button>
-        
+
         <!-- carrusel -->
         <div class="carousel-track" id="carouselTrack">
-          <!-- Tarjeta 1: FarmaStock -->
-          <div class="carousel-card active">
-            <img src="img/LogoFarmaStock.png" alt="FarmaStock">
-            <div class="carousel-card-content">
-              <h5>FarmaStock</h5>
-              <p>Sistema completo de gestión de inventario diseñado específicamente para farmacias.</p>
-            </div>
-          </div>
-          
-          <!-- Tarjeta 2: Software Activos -->
-          <div class="carousel-card">
-            <img src="img/SoftwareActivos.png" alt="Software de Gestion de Activos Médicos">
-            <div class="carousel-card-content">
-              <h5>Software de Gestión de Activos Médicos</h5>
-              <p>Sistema específico de gestión de equipos médicos, mantenimiento y control de plazos de inspección.</p>
-            </div>
-          </div>
-          
-          <!-- Tarjeta 3: Software Inventario -->
-          <div class="carousel-card">
-            <img src="img/SoftwareInventario.png" alt="Software de Gestión de Inventarios Médicos">
-            <div class="carousel-card-content">
-              <h5>Software de Gestión de Inventarios Médicos</h5>
-              <p>Sistema para el manejo y gestión inteligente de stock y garantía de disponibilidad de insumos médicos.</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Indicadores -->
-        <div class="carousel-dots" id="carouselDots">
-          <span class="carousel-dot active" onclick="goToSlide(0)"></span>
-          <span class="carousel-dot" onclick="goToSlide(1)"></span>
-          <span class="carousel-dot" onclick="goToSlide(2)"></span>
-        </div>
-      </div>
-    </div>
-  </section>
+  
+<!-- Tarjeta 1 -->
+<div class="carousel-card active"
+  onclick="abrirModal('img/LogoFarmaStock.png', 'FarmaStock', 'FarmaStock es un sistema completo de gestión de inventario diseñado especialmente para farmacias. Su estructura permite llevar un control preciso de productos, movimientos de stock, pedidos y reposiciones, optimizando la organización interna y reduciendo pérdidas por vencimientos o faltantes. Gracias a su interfaz intuitiva y adaptable, facilita la administración diaria del inventario, asegurando una gestión más ágil y eficiente que contribuye al correcto funcionamiento de la farmacia y a una mejor atención al cliente. ', '180.000', '165.000')">
+  <img src="img/LogoFarmaStock.png" alt="FarmaStock">
+  <div class="carousel-card-content">
+    <h5>FarmaStock</h5>
+    <p>Sistema completo de gestión de inventario diseñado específicamente para farmacias.</p>
+  </div>
+</div>
 
-  <!-- Contacto (CON VALIDACIÓN) -->
+<!-- Tarjeta 2 -->
+<div class="carousel-card"
+  onclick="abrirModal('img/SoftwareActivos.png', 'Software de Gestión de Activos Médicos', 'El Software de Gestión de Activos Médicos está enfocado en el control y mantenimiento de equipos utilizados en entornos de salud. Permite realizar un seguimiento detallado de cada activo, programar inspecciones, registrar tareas de mantenimiento y asegurar el cumplimiento de plazos y normativas técnicas. Con indicadores de disponibilidad y rendimiento, este sistema garantiza la trazabilidad de los equipos médicos y la continuidad operativa, reduciendo tiempos de inactividad y mejorando la eficiencia en la gestión hospitalaria.', '200.000', '160.000')">
+  <img src="img/SoftwareActivos.png" alt="Software de Gestión de Activos Médicos">
+  <div class="carousel-card-content">
+    <h5>Software de Gestión de Activos Médicos</h5>
+    <p>Sistema específico de gestión de equipos médicos, mantenimiento y control de plazos de inspección.</p>
+  </div>
+</div>
+
+<!-- Tarjeta 3 -->
+<div class="carousel-card"
+  onclick="abrirModal('img/SoftwareInventario.png', 'Software de Gestión de Inventarios Médicos', 'El Software de Gestión de Inventarios Médicos ofrece una solución integral para el manejo inteligente de insumos y materiales de salud. Su objetivo es asegurar la disponibilidad de productos esenciales mediante un control automatizado de stock, seguimiento de consumibles y gestión de pedidos. Este sistema permite optimizar el flujo de materiales, evitar quiebres de stock y garantizar una respuesta rápida ante la demanda de los distintos sectores médicos, contribuyendo a una administración eficiente y segura de los recursos.', '300.000', '290.000')">
+  <img src="img/SoftwareInventario.png" alt="Software de Gestión de Inventarios Médicos">
+  <div class="carousel-card-content">
+    <h5>Software de Gestión de Inventarios Médicos</h5>
+    <p>Sistema para el manejo y gestión inteligente de stock y garantía de disponibilidad de insumos médicos.</p>
+  </div>
+</div>
+
+<!-- Tarjeta 4 -->
+        <div class="carousel-card"
+          onclick="abrirModal('img/Software_Gestion_Logistica.png', 'Software de Gestión Logística', 'El Software de Gestión Logística proporciona una plataforma integral para la planificación, control y análisis de operaciones de distribución. Incorpora herramientas avanzadas para la optimización de rutas, seguimiento de entregas y gestión de envíos, lo que permite reducir costos, mejorar tiempos de entrega y aumentar la satisfacción del cliente. A través de su módulo analítico, brinda información clave para la toma de decisiones estratégicas, convirtiéndose en un aliado fundamental para lograr una logística moderna, eficiente y orientada a resultados.', '250.000', '200.000')">
+          <img src="img/Software_Gestion_Logistica.png" alt="Software de Gestión Logística">
+          <div class="carousel-card-content">
+            <h5>Software de Gestión Logística</h5>
+            <p>Sistema integral para optimización de rutas, control de envíos y análisis de logística de distribución.</p>
+            </div>
+          </div>
+        </div> 
+      </div> 
+
+    <!-- Indicadores -->
+    <div class="carousel-dots w-100" id="carouselDots">
+      <span class="carousel-dot active" onclick="goToSlide(0)"></span>
+      <span class="carousel-dot" onclick="goToSlide(1)"></span>
+      <span class="carousel-dot" onclick="goToSlide(2)"></span>
+      <span class="carousel-dot" onclick="goToSlide(3)"></span>
+    </div>
+  </div> 
+</section>
+
+  <!-- Contacto -->
   <section id="contacto" class="py-5">
     <div class="container">
       <h2 class="mb-4 text-center">Contacto</h2>
       <div class="row justify-content-center">
         <div class="col-md-6">
-          <form class="needs-validation" novalidate>
+          <form class="needs-validation" novalidate action="https://formspree.io/f/xyzndjjy" method="POST">
             <div class="mb-3">
               <label for="nombreContacto" class="form-label">Nombre *</label>
-              <input type="text" class="form-control" id="nombreContacto" placeholder="Tu nombre" required minlength="3">
+              <input type="text" name="nombre" class="form-control" id="nombreContacto" placeholder="Tu nombre" required minlength="3">
               <div class="invalid-feedback">
                 Por favor ingresa tu nombre (mínimo 3 caracteres).
               </div>
             </div>
             <div class="mb-3">
               <label for="emailContacto" class="form-label">Correo Electrónico *</label>
-              <input type="email" class="form-control" id="emailContacto" placeholder="Tu email" required>
+              <input type="email" name="email" class="form-control" id="emailContacto" placeholder="Tu email" required>
               <div class="invalid-feedback">
                 Por favor ingresa un email válido.
               </div>
             </div>
             <div class="mb-3">
               <label for="telefonoContacto" class="form-label">Teléfono</label>
-              <input type="tel" class="form-control" id="telefonoContacto" placeholder="Tu teléfono" pattern="[0-9]{9,15}">
+              <input type="tel" name="telefono" class="form-control" id="telefonoContacto" placeholder="Tu teléfono" pattern="[0-9]{9,15}">
               <div class="invalid-feedback">
                 Por favor ingresa un número de teléfono válido (9-15 dígitos).
               </div>
             </div>
             <div class="mb-3">
               <label for="mensajeContacto" class="form-label">Mensaje *</label>
-              <textarea class="form-control" id="mensajeContacto" rows="4" placeholder="Escribe tu mensaje" required minlength="10" maxlength="500"></textarea>
+              <textarea name="mensaje" class="form-control" id="mensajeContacto" rows="4" placeholder="Escribe tu mensaje" required minlength="10" maxlength="500"></textarea>
               <div class="invalid-feedback">
                 Por favor ingresa un mensaje (10-500 caracteres).
               </div>
@@ -486,6 +636,37 @@
       </div>
     </div>
   </section>
+
+  <!-- Modal de Ampliación -->
+  <div class="modal-ampliacion" id="modalAmpliacion">
+    <button class="cerrar-modal" onclick="cerrarModal()">×</button>
+    <div class="modal-contenido">
+      <div class="modal-imagen">
+        <img id="modalImagen" src="" alt="">
+      </div>
+      <div class="modal-info">
+        <h3 id="modalTitulo"></h3>
+        <p id="modalDescripcion"></p>
+        
+        <!-- Sección de precios y compra -->
+        <div class="compra-section mt-4 p-4 bg-light rounded">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="precios">
+              <p style="margin:0; font-size:1.4rem; font-weight: bold;">
+                <span id="precioOriginal" style="text-decoration: line-through; color: gray; font-size: 1.1rem;"></span>
+                <span id="precioDescuento" style="color: #0d6efd; margin-left: 15px; font-size: 1.5rem;"></span>
+                  </p>
+                </div>
+                <button class="btn btn-success btn-comprar" onclick="comprarProducto()" style="padding: 15px 40px; font-size: 1.3rem; font-weight: bold; min-width: 200px;">
+                  <i class="fas fa-shopping-cart me-2"></i> Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -580,6 +761,75 @@
     setInterval(() => {
       moveCarousel(1);
     }, 5000);
+    
+      // Funciones para el modal de ampliación
+function abrirModal(imagenSrc, titulo, descripcion, precioOriginal = '', precioDescuento = '') {
+  document.getElementById('modalImagen').src = imagenSrc;
+  document.getElementById('modalTitulo').textContent = titulo;
+  document.getElementById('modalDescripcion').textContent = descripcion;
+  
+  // Mostrar precios si existen
+  document.getElementById('precioOriginal').textContent = precioOriginal ? `$${precioOriginal}` : '';
+  document.getElementById('precioDescuento').textContent = precioDescuento ? `$${precioDescuento}` : '';
+  
+  document.getElementById('modalAmpliacion').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  document.body.style.position = 'fixed'; /* AGREGAR esta línea */
+  document.body.style.width = '100%'; /* AGREGAR esta línea */
+  posicionarCerrar();
+}
+
+function cerrarModal() {
+  document.getElementById('modalAmpliacion').classList.remove('active');
+  document.body.style.overflow = 'auto';
+  document.body.style.position = 'static'; /* AGREGAR esta línea */
+}
+    
+    
+    function comprarProducto() {
+      const producto = document.getElementById('modalTitulo').textContent;
+      const precio = document.getElementById('precioDescuento').textContent || 
+                    document.getElementById('precioOriginal').textContent;
+  
+  alert(`¡Gracias por tu compra!\n\nProducto: ${producto}\nPrecio: ${precio}\n\nSerás redirigido al proceso de pago.`);
+  cerrarModal();
+}
+    
+    document.getElementById('modalAmpliacion').addEventListener('click', function(e) {
+      if (e.target === this) {
+        cerrarModal();
+      }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        cerrarModal();
+      }
+    });
+    
+    // Después de tus funciones existentes, agrega:
+function posicionarCerrar() {
+  const cerrarBtn = document.querySelector('.cerrar-modal');
+  if (cerrarBtn) {
+    cerrarBtn.style.position = 'fixed';
+    cerrarBtn.style.top = '80px';
+    cerrarBtn.style.right = '20px';
+    cerrarBtn.style.zIndex = '1001';
+  }
+}
+
+// Función abrirModal:
+    function abrirModal(imagenSrc, titulo, descripcion, precioOriginal = '', precioDescuento = '') {
+      document.getElementById('modalImagen').src = imagenSrc;
+      document.getElementById('modalTitulo').textContent = titulo;
+      document.getElementById('modalDescripcion').textContent = descripcion;
+      // Mostrar precios si existen
+      document.getElementById('precioOriginal').textContent = precioOriginal ? `$${precioOriginal}` : '';
+      document.getElementById('precioDescuento').textContent = precioDescuento ? `$${precioDescuento}` : '';
+      document.getElementById('modalAmpliacion').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      posicionarCerrar();
+    }
   </script>
 </body>
 </html>
