@@ -26,12 +26,12 @@ Con este sistema buscamos:
 | 🧑‍💻 Nicolas Elias Calmucci | Scrum Master - Desarrollador | [Eleven1433](https://github.com/Eleven1433) |
 | 👨‍💻 Juan Ignacio Alonso | Desarrollador | [juanignacioalonso](https://github.com/juanignacioalonso) |
 | 👨‍💻 Cesar Ramiro Ruggieri | Desarrollador | [subrami22](https://github.com/subrami22) |
-| 👨‍💻 Ivan Massimino | Desarrollador | [IvanMass99](https://github.com/IvanMass99) |
+| 👨‍💻 Juan Daniel Opazo | Desarrollador | [juancen](https://github.com/juancen) |
 
 
 ---
 
-## 🌐 Organización y Repositorios  
+## 🌐 Organización y Repositorios  j
 
 📂 **Organización GitHub**  
 🔗 [Proyecto1-ISPC-G14-2025](https://github.com/Proyecto1-ISPC-G14-2025)  
