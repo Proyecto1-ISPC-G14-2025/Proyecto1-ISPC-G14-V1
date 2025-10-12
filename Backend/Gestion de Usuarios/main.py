@@ -1,5 +1,6 @@
 # main.py
 # Script principal para interacción en consola
+# acciones principales
 
 from user import Usuario
 from admin import Admin
