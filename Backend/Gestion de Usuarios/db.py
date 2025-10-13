@@ -10,7 +10,8 @@ class Database:
             host='localhost',
             user='root',
             password='',
-            database='farmastock'
+            database='mi_sistema_usuarios'
+
         )
         self.cursor = self.conn.cursor(dictionary=True, buffered=True)
     

@@ -1,5 +1,6 @@
 # admin.py
 from db import Database
+#definicion de clase Admin para acciones de gestion de usuarios
 
 class Admin:
     def __init__(self, username):
